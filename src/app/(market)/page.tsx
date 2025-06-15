@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { ErrorWrapper } from "./error-wrapper";
 import Link from "next/link";
 
 export const metadata: Metadata = {

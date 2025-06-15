@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title:{
+  title: {
     default: "My Next.js App",
     template: "%s | PageCuy",
   },
@@ -36,10 +36,12 @@ export default function RootMarketLayout({
         <header>
           <div className="flex items-center justify-between p-4 bg-transparent ">
             <h1 className="text-xl font-bold">My Next.js App</h1>
-           <NavLinks />
+            <NavLinks />
           </div>
         </header>
-        <main className="w-6xl mx-auto py-8 min-h-[100dvh]">{children}</main>
+        <main className="w-6xl mx-auto py-8 min-h-[100dvh]">
+          {children}
+        </main>
         <footer>
           <div className="flex items-center justify-center p-4 bg-linear-to-b/hsl from-transparent to-slate-950">
             <p className="text-sm text-gray-600 dark:text-gray-400">

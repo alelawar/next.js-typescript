@@ -8,6 +8,8 @@ export default function NavLinks() {
     { href: "/profile", label: "Profile" },
     { href: "/products", label: "Products" },
     { href: "/articles", label: "Articles" },
+    { href: "/dashboard", label: "Dashboard" },
+    { href: "/f1", label: "F1" },
   ];
 
   const pathname = usePathname();

@@ -1,23 +1,24 @@
-import { MetaData } from "next";
+import { Metadata } from "next";
 
 type Props = {
     params: Promise<{ productId: string }>;
 }
 
-export const generateMetadata = async ({ params }: Props): Promise<MetaData> => {
-    const id = (await params).productId;
-    const title = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(`iMac ${id} `);
-        }, 4000)
-    })
-    return {
-        title: `Product ${title} detail`,
-    }
+function getRandomInt(count: number) {
+    return Math.floor(Math.random() * count);
 }
+
+export const metadata: Metadata = {
+    title: "Product Detail Page",
+    description: "Detailed view of a specific product.",
+};
 
 
 export default async function ProductDetail({ params }: Props) {
+    const random = getRandomInt(2);
+    if (random === 1) {
+       throw new Error("An error occurred while fetching product details.");
+    }
     const { productId } = await params;
 
     return (

@@ -1,4 +1,6 @@
+
 import Link from "next/link";
+
 
 export default async function Products() {
     await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate a delay for loading effect
