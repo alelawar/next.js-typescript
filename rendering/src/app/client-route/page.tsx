@@ -1,33 +1,22 @@
 "use client"
 // import { ServerSideFunction } from "@/utils/server-utils"
 
-import React from "react"
-import Slider from "react-slick"
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import { useTheme } from "@/components/theme-provider"
+import React from "react";
+
+import { clientSideFunction } from "@/utils/client-utils";
 
 export default function ClientRoutePage() {
     // const result = ServerSideFunction()
-    // const theme = useTheme();
+    const theme = useTheme();
+    const result = clientSideFunction();
     const settings = {
-      dots: true,
+        dots: true,
     };
     return (
-        <div className="image-slider-container">
-            <Slider {...settings}>
-                <div>
-                    <img src="https://picsum.photos/400/200" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/400/200" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/400/200" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/400/200" />
-                </div>
-            </Slider>
-        </div>
+        <>
+            <h1 className="my-8 text-center" style={{ color: theme.colors.primary }}>Image Slider Client Components</h1>
+            <p>{result}</p>
+        </>
     )
 }
